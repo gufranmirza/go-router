@@ -27,22 +27,22 @@ func (s *Router) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	f(w, r)
 }
 
-// GET sets get request
+// GET sets get handler
 func (s *Router) GET(path string, f http.HandlerFunc) {
 	s.handlers[key("GET", path)] = f
 }
 
-// POST sets post request
+// POST sets post handler
 func (s *Router) POST(path string, f http.HandlerFunc) {
 	s.handlers[key("POST", path)] = f
 }
 
-// DELETE sets delete request
+// DELETE sets delete handler
 func (s *Router) DELETE(path string, f http.HandlerFunc) {
 	s.handlers[key("DELETE", path)] = f
 }
 
-// PUT sets put request
+// PUT sets put handler
 func (s *Router) PUT(path string, f http.HandlerFunc) {
 	s.handlers[key("PUT", path)] = f
 }
